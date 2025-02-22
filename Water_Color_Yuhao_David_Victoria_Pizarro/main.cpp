@@ -46,10 +46,12 @@ void tableroInicio(char table[ROWS][COLUMNS]) {
 		table[a][1] = 'X';
 	}
 	table[3][13] = 'O';
-	table[2][13] = 'O';
+	table[2][13] = 'S';
 	table[1][13] = 'S';
 	table[3][5] = 'S';
-
+	table[2][5] = 'S';
+	table[3][21] = 'X';
+	table[3][17] = 'O';
 }
 
 void imprimirTablero(char table[ROWS][COLUMNS]) {
@@ -68,13 +70,15 @@ void main() {
 	int eleccion = 0;
 	int eleccion2 = 0;
 	int turnos = 10;
+	bool completado = false;
 	while (turnos > 0) {
+		completado = false;
 		tableroInicio(table);
 		imprimirTablero(table);
 		elegirVaciar(eleccion,  table);	//Elige la botella con liquido a vaciar
 		elegirLlenar(eleccion2, eleccion, table);
-		liquido(eleccion, eleccion2, table);
-		turnos--;
+		liquido(eleccion, eleccion2, table, completado);
+		if(completado)turnos--;
 		std::cout << "Turnos restantes: " << turnos << "\n";
 	}
 }

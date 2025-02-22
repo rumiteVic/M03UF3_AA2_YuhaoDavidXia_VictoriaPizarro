@@ -2,7 +2,7 @@
 #include "elegirVaciar.h"
 #define ROWS 6
 #define COLUMNS 23
-void liquido(int &eleccion, int &eleccion2, char table[ROWS][COLUMNS]) {
+void liquido(int &eleccion, int &eleccion2, char table[ROWS][COLUMNS], bool &completado) {
 	int columna = 0;
 	if (eleccion == 1) { columna = 1; }
 	else if (eleccion == 2) { columna = 5; }
@@ -62,16 +62,30 @@ void liquido(int &eleccion, int &eleccion2, char table[ROWS][COLUMNS]) {
 	//Comprobamos si se puede o no vertir el liquido
 	if (liqRec == ' ') {
 		poderVaciar = true;
+		completado = true;
 	}
 	else if (liqDar == liqRec) {
 		poderVaciar = true;
+		completado = true;
 	}
 	else if (!poderVaciar) {
-		elegirVaciar(eleccion, table);
+		elegirLlenar(eleccion2, eleccion, table);
 	}
-	std::cout << "liquido a dar " << liqDar << " cantidadDar " << cantidadDar << "\n";
-	std::cout << "ultimo liquido " << liqRec << " cantidadARecibir " << cantidadRecibir << "\n";
-	//
+	//std::cout << "liquido a dar " << liqDar << " cantidadDar " << cantidadDar << "\n";
+	//std::cout << "ultimo liquido " << liqRec << " cantidadARecibir " << cantidadRecibir << "\n";
+
+	if (cantidadRecibir < cantidadDar) {
+		cantidadDar = cantidadRecibir;
+	}
+	std::cout << cantidadRecibir << "    " << cantidadDar;
+	//Vaciamos botella
+	for (int a = 1; a < cantidadDar; a++) {
+		table[a][columna] = ' ';
+	}
+	//Llenamos botella
+	for (int a = 1; a < cantidadRecibir; a++) {
+		table[a][columna2] = liqDar;
+	}
 	//Miramos cuanto espacio hay desdel liquido hasta la ultima fila donde podemos poner el liquido
 	//Miramos los espacios en blanco y los espacios que podemos dar, si espacios en blanco de recibir >= espacios a dar		== ta bien
 	//Si espacios en blanco < espacios a dar entonces	espacios a dar = blanco
