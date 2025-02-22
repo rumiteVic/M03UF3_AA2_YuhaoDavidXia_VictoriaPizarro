@@ -1,6 +1,7 @@
 #include <iostream>
 #include "noVacio.h"
 #include "elegirVaciar.h"
+#include "liquido.h"
 #define ROWS 6
 #define COLUMNS 23
 
@@ -9,6 +10,7 @@ void tableroInicio(char table[ROWS][COLUMNS]) {
 	char barra = 47;
 	char comilla = 39;
 	char num = 49;
+	int Score = 0;
 	for (int a = 0; a < ROWS; a++) {
 		for (int b = 0; b < COLUMNS; b++) {
 			table[a][b] = ' ';
@@ -70,6 +72,7 @@ void main() {
 		imprimirTablero(table);
 		elegirVaciar(eleccion,  table);	//Elige la botella con liquido a vaciar
 		elegirLlenar(eleccion2, eleccion, table);
+		liquido(eleccion, eleccion2, table);
 		turnos--;
 		std::cout << "Turnos restantes: " << turnos << "\n";
 	}

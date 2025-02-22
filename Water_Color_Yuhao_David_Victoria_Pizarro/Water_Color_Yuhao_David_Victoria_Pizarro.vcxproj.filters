@@ -24,12 +24,18 @@
     <ClCompile Include="elegirVaciar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="liquido.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="noVacio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="elegirVaciar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="liquido.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -128,11 +128,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="elegirVaciar.cpp" />
+    <ClCompile Include="liquido.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="noVacio.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="elegirVaciar.h" />
+    <ClInclude Include="liquido.h" />
     <ClInclude Include="noVacio.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
