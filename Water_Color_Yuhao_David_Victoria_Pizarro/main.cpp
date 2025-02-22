@@ -48,6 +48,7 @@ void tableroInicio(char table[ROWS][COLUMNS]) {
 	table[3][13] = 'O';
 	table[2][13] = 'O';
 	table[1][13] = 'S';
+	table[3][5] = 'S';
 
 }
 
