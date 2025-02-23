@@ -85,10 +85,5 @@ void puntuacio(char table[ROWS][COLUMNS], int& turnos, int &turnos2, bool &salim
 		std::cin >> name;
 		guardarPartida(name, score);
 	}
-	/*if ( partida || forzado) {
-		std::cout << "You won!!! Your score is: " << score << "----> Enter your name: ";
-		std::cin >> name;
-		guardarPartida(name, score);
-	}*/
 	win = 0;
 }
