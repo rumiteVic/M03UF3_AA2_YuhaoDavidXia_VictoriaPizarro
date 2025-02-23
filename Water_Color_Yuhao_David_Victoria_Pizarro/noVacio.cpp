@@ -18,11 +18,11 @@ void noVacio(int& eleccion, char table[ROWS][COLUMNS]) {
 	else if (eleccion == 5) { columna = 17; }
 	else if (eleccion == 6) { columna = 21; }
 
-	for (int a = 1; a < ROWS - 2; a++) {
+	for (int a = 1; a < ROWS - 2; a++) {	//Mira si esta vacia
 		if (table[a][columna] == ' ') {
 			num++;
 		}
-		else if (table[a][columna] == 'X') {
+		else if (table[a][columna] == 'X') {	//Mira si tiene todo del mismo liquido
 			numLiq1++;
 		}
 		else if (table[a][columna] == 'O') {
@@ -36,7 +36,7 @@ void noVacio(int& eleccion, char table[ROWS][COLUMNS]) {
 		}
 	}
 
-	while (num == 3 || numLiq1 == 3 || numLiq2 == 3 || numLiq3 == 3 || numLiq4 == 3) {
+	while (num == 3 || numLiq1 == 3 || numLiq2 == 3 || numLiq3 == 3 || numLiq4 == 3) {	//Si tiene 3 de liquido de lo mismo o esta vacia, elegimos de nuevo
 		std::cout << "Esta vacia la botella o esta llena hasta arriba del mismo liquido\n";
 		num = 0; numLiq1 = 0; numLiq2 = 0; numLiq3 = 0; numLiq4 = 0;
 		elegirVaciar(eleccion, table);
@@ -66,7 +66,7 @@ void comprobarLlena(int& eleccion2, int& eleccion, char table[ROWS][COLUMNS]) {
 			num++;
 		}
 	}
-	while (num == 3) {
+	while (num == 3) {		//Si tiene 3 espacios llenos de algo elegimos de nuevo
 		std::cout << "Esta llena la botella\n";
 		num = 0;
 		elegirLlenar(eleccion2, eleccion, table);

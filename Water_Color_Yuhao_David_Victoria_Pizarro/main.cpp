@@ -52,8 +52,8 @@ void tableroInicio(char table[ROWS][COLUMNS]) {
 		table[a][1] = 'X';
 	}
 	//Liquidos de forma temporal
-	table[3][13] = 'O';
-	table[2][13] = 'S';
+	table[3][13] = 'S';
+	table[2][13] = 'O';
 	table[1][13] = 'S';
 	table[3][5] = 'S';
 	table[2][5] = 'S';
@@ -94,7 +94,7 @@ void menu(char table[ROWS][COLUMNS], bool &partida, bool &salimos, int &turnos) 
 		verScore();
 		break;
 	case 3:
-		std::cout << "Sortint\n";	//S'acaba tot i amb les booleanes de sota fem que no pugui entrar a jugar
+		std::cout << "Sortint\n";	//S'acaba tot i amb les booleanes de sota fem que no pugui al bucle d'entrar a jugar
 		partida = false;
 		salimos = true;
 		break;
@@ -109,24 +109,24 @@ void main() {
 	int eleccion = 0;
 	int eleccion2 = 0;
 	int turnos = 10;
-	int turnos2;
-	bool completado = false;
-	bool forzado = false;
-	bool salimos = false;
+	int turnos2;		//Un int que utilitzarem per contar els turns restants si acabem la partida de forma forzosa
+	bool completado = false;	//Una booleana que es posa en true si posem el liquid bé
+	bool forzado = false;		//Booleana que indica que hem forzat a terminar la partida
+	bool salimos = false;		//Booleana que juntament amb la de sota podem terminar partida o començar una de nova
 	bool partida = false;
 	while (!salimos) {
-		menu(table, partida, salimos, turnos);
+		menu(table, partida, salimos, turnos);	//Vamos al menu principal
 		if (partida) {
 
 			while (turnos > 0) {
 				completado = false;
-				imprimirTablero(table);
-				elegirMenu(eleccion, table, turnos, salimos, partida, turnos2);	//Elige la botella con liquido a vaciar
-				if (partida) {
-					elegirLlenar(eleccion2, eleccion, table);
-					liquido(eleccion, eleccion2, table, completado);
-					if (completado)turnos--;
-					puntuacio(table, turnos, turnos2, salimos, partida, forzado);
+				imprimirTablero(table);		//Imprimir el "tauler"
+				elegirMenu(eleccion, table, turnos, salimos, partida, turnos2);	//Escogim l'ampolla amb el liquid a buidar
+				if (partida) {													//Per si escogim de fer la segona opcio, això la tornarà false i arribarem a la puntuació
+					elegirLlenar(eleccion2, eleccion, table);	//Escogim l'ampolla a la que volem posar un liquid
+					liquido(eleccion, eleccion2, table, completado);	//Fem l'intercanvi dels líquids
+					if (completado)turnos--;							//Evitem treure torns si no s'ha fet l'intercanvi
+					puntuacio(table, turnos, turnos2, salimos, partida, forzado);	//Puntuem
 				}
 				else {
 					forzado = true;
