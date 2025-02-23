@@ -36,6 +36,9 @@
     <ClCompile Include="guardarPartida.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="verScore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="noVacio.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="guardarPartida.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="verScore.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -134,6 +134,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="noVacio.cpp" />
     <ClCompile Include="puntuacion.cpp" />
+    <ClCompile Include="verScore.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="eleccionMenu.h" />
@@ -142,6 +143,7 @@
     <ClInclude Include="liquido.h" />
     <ClInclude Include="noVacio.h" />
     <ClInclude Include="puntuacion.h" />
+    <ClInclude Include="verScore.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

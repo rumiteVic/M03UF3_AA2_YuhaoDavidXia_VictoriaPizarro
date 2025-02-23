@@ -4,6 +4,7 @@
 #include "liquido.h"
 #include "eleccionMenu.h"
 #include "puntuacion.h"
+#include "verScore.h"
 #define ROWS 6
 #define COLUMNS 23
 
@@ -64,16 +65,6 @@ void imprimirTablero(char table[ROWS][COLUMNS]) {
 		}
 		std::cout << "\n";
 	}
-}
-
-void verScore() {
-	char caracter;
-	std::cout << "------ HIGHSCORES ------\n";
-
-	//Aqui va leer archivos
-
-	std::cout << "Press any key to continue . . .\n";
-	std::cin >> caracter;
 }
 
 void menu(char table[ROWS][COLUMNS], bool &partida, bool &salimos, int &turnos) {

@@ -57,16 +57,13 @@ void puntuacio(char table[ROWS][COLUMNS], int& turnos, int &turnos2, bool &salim
 		if (vacio == 3) {
 			win++;
 			score += 50;
-			std::cout << "vacio";
 		}
 		else if (canIgual == 3) {
 			win++;
-			std::cout << "lleno";
 			score += 30;
 		}
 		else if (dif < 1) {
 			win++;
-			std::cout << "yea";
 			score += 30;
 		}
 		vacio = 0;
