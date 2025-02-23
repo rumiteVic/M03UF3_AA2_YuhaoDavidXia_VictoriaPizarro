@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="eleccionMenu.cpp" />
     <ClCompile Include="elegirVaciar.cpp" />
+    <ClCompile Include="guardarPartida.cpp" />
     <ClCompile Include="liquido.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="noVacio.cpp" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <ClInclude Include="eleccionMenu.h" />
     <ClInclude Include="elegirVaciar.h" />
+    <ClInclude Include="guardarPartida.h" />
     <ClInclude Include="liquido.h" />
     <ClInclude Include="noVacio.h" />
     <ClInclude Include="puntuacion.h" />

@@ -66,8 +66,14 @@ void imprimirTablero(char table[ROWS][COLUMNS]) {
 	}
 }
 
-void guardarScore() {
+void verScore() {
+	char caracter;
+	std::cout << "------ HIGHSCORES ------\n";
 
+	//Aqui va leer archivos
+
+	std::cout << "Press any key to continue . . .\n";
+	std::cin >> caracter;
 }
 
 void menu(char table[ROWS][COLUMNS], bool &partida, bool &salimos, int &turnos) {
@@ -90,6 +96,7 @@ void menu(char table[ROWS][COLUMNS], bool &partida, bool &salimos, int &turnos) 
 		break;
 	case 2:
 		std::cout << "Buscant i imiprimint en la pantalla la puntuacio\n";
+		verScore();
 		break;
 	case 3:
 		std::cout << "Sortint\n";
@@ -124,12 +131,13 @@ void main() {
 					elegirLlenar(eleccion2, eleccion, table);
 					liquido(eleccion, eleccion2, table, completado);
 					if (completado)turnos--;
+					puntuacio(table, turnos, turnos2, salimos, partida, forzado);
 				}
 				else {
-					std::cout << "Turnos restantes: " << turnos << "\n";
 					forzado = true;
 					puntuacio(table, turnos, turnos2, salimos, partida, forzado);
 				}
+				std::cout << "Turnos restantes: " << turnos << "\n";
 			}
 		}
 	}

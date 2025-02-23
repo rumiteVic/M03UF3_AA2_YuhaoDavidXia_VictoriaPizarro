@@ -1,4 +1,5 @@
 #include <iostream>
+#include "guardarPartida.h"
 #define ROWS 6
 #define COLUMNS 23
 void puntuacio(char table[ROWS][COLUMNS], int& turnos, int &turnos2, bool &salimos, bool &partida, bool &forzado) {
@@ -56,13 +57,16 @@ void puntuacio(char table[ROWS][COLUMNS], int& turnos, int &turnos2, bool &salim
 		if (vacio == 3) {
 			win++;
 			score += 50;
+			std::cout << "vacio";
 		}
 		else if (canIgual == 3) {
 			win++;
+			std::cout << "lleno";
 			score += 30;
 		}
 		else if (dif < 1) {
 			win++;
+			std::cout << "yea";
 			score += 30;
 		}
 		vacio = 0;
@@ -72,13 +76,19 @@ void puntuacio(char table[ROWS][COLUMNS], int& turnos, int &turnos2, bool &salim
 	}
 	if (win == 6 || forzado) {
 		int turnPoints = 3;
-		int cantidad = 3 * turnos2;
+		if(forzado)int cantidad = 3 * turnos2;
+		int cantidad = 3 * turnos;
 		score += cantidad;
 		turnos2 = 0;
-	}
-	if ( partida || forzado) {
+		turnos = 0;
 		std::cout << "You won!!! Your score is: " << score << "----> Enter your name: ";
 		std::cin >> name;
+		guardarPartida(name, score);
 	}
+	/*if ( partida || forzado) {
+		std::cout << "You won!!! Your score is: " << score << "----> Enter your name: ";
+		std::cin >> name;
+		guardarPartida(name, score);
+	}*/
 	win = 0;
 }

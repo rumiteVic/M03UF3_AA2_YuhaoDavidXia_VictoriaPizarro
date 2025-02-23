@@ -33,6 +33,9 @@
     <ClCompile Include="puntuacion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="guardarPartida.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="noVacio.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="puntuacion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="guardarPartida.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
