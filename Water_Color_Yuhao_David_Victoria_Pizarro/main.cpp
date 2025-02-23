@@ -8,12 +8,15 @@
 #define ROWS 6
 #define COLUMNS 23
 
+//Creamos el tablero con los liquidos
 void tableroInicio(char table[ROWS][COLUMNS]) {
 	char contraBarra = 92;
 	char barra = 47;
 	char comilla = 39;
 	char num = 49;
 	int Score = 0;
+	//Lo llenamos de espacios en blanco para llenarlo más tarde con la forma de las botellas
+	//Y los liquidos
 	for (int a = 0; a < ROWS; a++) {
 		for (int b = 0; b < COLUMNS; b++) {
 			table[a][b] = ' ';
@@ -48,6 +51,7 @@ void tableroInicio(char table[ROWS][COLUMNS]) {
 	for (int a = 1; a < ROWS - 2; a++) {
 		table[a][1] = 'X';
 	}
+	//Liquidos de forma temporal
 	table[3][13] = 'O';
 	table[2][13] = 'S';
 	table[1][13] = 'S';
@@ -57,7 +61,7 @@ void tableroInicio(char table[ROWS][COLUMNS]) {
 	table[3][17] = 'O';
 	table[2][17] = 'X';
 }
-
+//Imprimimos el tablero
 void imprimirTablero(char table[ROWS][COLUMNS]) {
 	for (int a = 0; a < ROWS; a++) {
 		for (int b = 0; b < COLUMNS; b++) {
@@ -66,7 +70,7 @@ void imprimirTablero(char table[ROWS][COLUMNS]) {
 		std::cout << "\n";
 	}
 }
-
+//Menu principal
 void menu(char table[ROWS][COLUMNS], bool &partida, bool &salimos, int &turnos) {
 	int eleccion = 0;
 	std::cout << "------WATER COLOUR SORT-----\n";
@@ -79,18 +83,18 @@ void menu(char table[ROWS][COLUMNS], bool &partida, bool &salimos, int &turnos) 
 	}
 	switch (eleccion) {
 	case 1:
-		std::cout << "Generant nova partida\n";
-		partida = true;
+		std::cout << "Generant nova partida\n";	//Fem una nova partida
+		partida = true;							//Posar aquestes 2 coses, 1 en true y l'altre en false fa que podem iniciar partida
 		salimos = false;
 		turnos = 10;
-		tableroInicio(table);
+		tableroInicio(table);					//Cridem a la funció de fer el "tabler" on posa els liquids
 		break;
 	case 2:
-		std::cout << "Buscant i imiprimint en la pantalla la puntuacio\n";
+		std::cout << "Buscant i imiprimint en la pantalla la puntuacio\n";	//Generem que es vegui les puntuacions
 		verScore();
 		break;
 	case 3:
-		std::cout << "Sortint\n";
+		std::cout << "Sortint\n";	//S'acaba tot i amb les booleanes de sota fem que no pugui entrar a jugar
 		partida = false;
 		salimos = true;
 		break;

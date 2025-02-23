@@ -25,7 +25,6 @@ void verScore() {
 		delete[] temp;
 		readFile.read(reinterpret_cast<char*>(&num), sizeof(int));
 		score.push_back(num);
-
 		if (readFile.eof()) {
 			readFile.close();
 		}
